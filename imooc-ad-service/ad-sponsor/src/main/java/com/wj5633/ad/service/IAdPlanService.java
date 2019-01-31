@@ -20,6 +20,7 @@ public interface IAdPlanService {
 
     /**
      * 创建推广计划
+     *
      * @param request
      * @return
      * @throws AdException
@@ -28,6 +29,7 @@ public interface IAdPlanService {
 
     /**
      * 获取推广计划
+     *
      * @param request
      * @return
      * @throws AdException
@@ -36,6 +38,7 @@ public interface IAdPlanService {
 
     /**
      * 更新推广计划
+     *
      * @param request
      * @return
      * @throws AdException
@@ -44,8 +47,9 @@ public interface IAdPlanService {
 
     /**
      * 删除推广计划
+     *
      * @param request
      * @throws Exception
      */
-    void deleteAdPlan(AdPlanRequest request) throws Exception;
+    void deleteAdPlan(AdPlanRequest request) throws AdException;
 }

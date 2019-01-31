@@ -34,8 +34,8 @@ import java.util.Optional;
 @Service
 public class AdPlanServiceImpl implements IAdPlanService {
 
-    private AdUserRepository userRepository;
-    private AdPlanRepository planRepository;
+    private final AdUserRepository userRepository;
+    private final AdPlanRepository planRepository;
 
 
     @Autowired
@@ -57,7 +57,7 @@ public class AdPlanServiceImpl implements IAdPlanService {
 
         AdPlan oldPlan = planRepository.findByUserIdAndPlanName(request.getUserId(), request.getPlanName());
         if (oldPlan != null) {
-            throw new AdException(ErrorConstant.PLANNAMR_EXIST_ERROR);
+            throw new AdException(ErrorConstant.PLAN_EXIST_ERROR);
         }
         AdPlan newPlan = planRepository.save(new AdPlan(
                 request.getUserId(), request.getPlanName(),
@@ -101,7 +101,7 @@ public class AdPlanServiceImpl implements IAdPlanService {
 
     @Override
     @Transactional
-    public void deleteAdPlan(AdPlanRequest request) throws Exception {
+    public void deleteAdPlan(AdPlanRequest request) throws AdException {
         if (!request.deleteValidate()) {
             throw new AdException(ErrorConstant.REQUEST_PARAM_ERROR);
         }
