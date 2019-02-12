@@ -1,13 +1,12 @@
 package com.wj5633.ad.index.creativeunit;
 
 import com.wj5633.ad.index.IndexAware;
+import com.wj5633.ad.index.adunit.AdUnitObject;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.collections4.CollectionUtils;
 import org.springframework.stereotype.Component;
 
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentSkipListSet;
 
@@ -53,7 +52,7 @@ public class CreativeUnitIndex implements IndexAware<String, CreativeUnitObject>
         }
         unitIdSet.add(value.getUnitId());
 
-        Set<Long> creativeSet = creativeUnitMap.get(value.getUnitId());
+        Set<Long> creativeSet = unitCreativeMap.get(value.getUnitId());
         if (creativeSet == null) {
             creativeSet = new ConcurrentSkipListSet<>();
             creativeUnitMap.put(value.getUnitId(), creativeSet);
@@ -78,11 +77,26 @@ public class CreativeUnitIndex implements IndexAware<String, CreativeUnitObject>
         if (CollectionUtils.isNotEmpty(unitIdSet)) {
             unitIdSet.remove(value.getUnitId());
         }
-        Set<Long> creativeSet = creativeUnitMap.get(value.getUnitId());
+        Set<Long> creativeSet = unitCreativeMap.get(value.getUnitId());
         if (CollectionUtils.isNotEmpty(creativeSet)) {
             creativeSet.remove(value.getAdId());
         }
         log.info("CreativeUnitIndex, after delete: {}", objectMap);
     }
 
+    public List<Long> selectAds(List<AdUnitObject> unitObjects) {
+        if (CollectionUtils.isEmpty(unitObjects)) {
+            return Collections.emptyList();
+        }
+
+        List<Long> result = new ArrayList<>();
+
+        for (AdUnitObject unitObject : unitObjects) {
+            Set<Long> adIds = unitCreativeMap.get(unitObject.getUnitId());
+            if (CollectionUtils.isNotEmpty(adIds)) {
+                result.addAll(adIds);
+            }
+        }
+        return result;
+    }
 }

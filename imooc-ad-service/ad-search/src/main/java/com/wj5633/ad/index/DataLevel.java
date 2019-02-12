@@ -1,6 +1,6 @@
 package com.wj5633.ad.index;
 
-import lombok.Data;
+import lombok.Getter;
 
 /**
  * Created with IntelliJ IDEA.
@@ -11,7 +11,8 @@ import lombok.Data;
  * @description
  */
 
-public enum  DataLevel {
+@Getter
+public enum DataLevel {
 
     LEVEL2("2", "level 2"),
     LEVEL3("3", "level 3"),
@@ -25,19 +26,4 @@ public enum  DataLevel {
         this.level = level;
         this.desc = desc;
     }
-
-    public String getLevel() {
-        return level;
-    }
-
-    public void setLevel(String level) {
-        this.level = level;
-    }
-
-    public String getDesc() {
-        return desc;
-    }
-
-    public void setDesc(String desc) {
-        this.desc = desc;
-    }}
+}
