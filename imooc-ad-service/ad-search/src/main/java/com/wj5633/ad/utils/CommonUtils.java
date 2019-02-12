@@ -17,4 +17,9 @@ public class CommonUtils {
 
         return map.computeIfAbsent(key, k -> factory.get());
     }
+
+    public static String stringConcat(String... args) {
+        return String.join("-", args);
+    }
+
 }
