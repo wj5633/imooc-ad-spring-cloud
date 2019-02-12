@@ -69,14 +69,14 @@ public class AdLevelDatahandler {
             return;
         }
         AdUnitObject adUnitObject = new AdUnitObject(
-                unitTable.getUintId(),
+                unitTable.getUnitId(),
                 unitTable.getUnitStatus(),
                 unitTable.getPositionType(),
                 unitTable.getPlanId(),
                 adPlanObject
         );
 
-        handleBinlogEvent(DataTable.of(AdUnitIndex.class), unitTable.getUintId(), adUnitObject, type);
+        handleBinlogEvent(DataTable.of(AdUnitIndex.class), unitTable.getUnitId(), adUnitObject, type);
     }
 
     public static void handleLevel3(AdCreativeUnitTable creativeUnitTable, OpType type) {
