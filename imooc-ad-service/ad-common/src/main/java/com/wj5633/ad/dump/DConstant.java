@@ -15,7 +15,7 @@ public interface DConstant {
     String AD_UNIT = "ad_unit.data";
     String AD_CREATIVE = "ad_creative.data";
     String AD_CREATIVE_UNIT = "ad_creative_unit.data";
-    String AAD_UNIT_IT = "ad_unit_it.data";
-    String AAD_UNIT_DISTRICT = "ad_unit_district.data";
-    String AAD_UNIT_KEYWORD = "ad_unit_keyword.data";
+    String AD_UNIT_IT = "ad_unit_it.data";
+    String AD_UNIT_DISTRICT = "ad_unit_district.data";
+    String AD_UNIT_KEYWORD = "ad_unit_keyword.data";
 }

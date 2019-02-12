@@ -80,14 +80,14 @@ public class DumpDataService {
         );
 
         dumpAdUnitKeywordTable(
-                String.format("%s/%s", DConstant.DATA_ROOT_DIR, DConstant.AAD_UNIT_KEYWORD)
+                String.format("%s/%s", DConstant.DATA_ROOT_DIR, DConstant.AD_UNIT_KEYWORD)
         );
 
         dumpAdUnitItTable(
-                String.format("%s/%s", DConstant.DATA_ROOT_DIR, DConstant.AAD_UNIT_IT)
+                String.format("%s/%s", DConstant.DATA_ROOT_DIR, DConstant.AD_UNIT_IT)
         );
         dumpAdUnitDistrictTable(
-                String.format("%s/%s", DConstant.DATA_ROOT_DIR, DConstant.AAD_UNIT_DISTRICT)
+                String.format("%s/%s", DConstant.DATA_ROOT_DIR, DConstant.AD_UNIT_DISTRICT)
         );
     }
 
