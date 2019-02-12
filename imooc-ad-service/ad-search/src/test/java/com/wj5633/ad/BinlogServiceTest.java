@@ -6,6 +6,8 @@ import com.github.shyiko.mysql.binlog.event.EventData;
 import com.github.shyiko.mysql.binlog.event.UpdateRowsEventData;
 import com.github.shyiko.mysql.binlog.event.WriteRowsEventData;
 
+import java.io.IOException;
+
 /**
  * Created with IntelliJ IDEA.
  *
@@ -16,13 +18,13 @@ import com.github.shyiko.mysql.binlog.event.WriteRowsEventData;
  */
 public class BinlogServiceTest {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
 
         BinaryLogClient client = new BinaryLogClient(
                 "127.0.0.1",
                 3306,
                 "root",
-                "test"
+                "123456"
         );
 
         client.registerEventListener(event -> {
@@ -40,5 +42,6 @@ public class BinlogServiceTest {
                 System.out.println(data.getClass().getSimpleName() + "===================");
             }
         });
+        client.connect();
     }
 }

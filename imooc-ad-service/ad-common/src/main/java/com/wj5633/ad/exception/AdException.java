@@ -1,6 +1,7 @@
 package com.wj5633.ad.exception;
 
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 
 /**
  * Created with IntelliJ IDEA.
@@ -12,6 +13,7 @@ import lombok.Data;
  */
 
 @Data
+@EqualsAndHashCode(callSuper = false)
 public class AdException extends Exception {
 
     private Integer code;

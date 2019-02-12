@@ -1,25 +1,25 @@
-package com.wj5633.ad.dump.table;
+package com.wj5633.ad.mysql.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+
+import java.util.List;
 
 /**
  * Created with IntelliJ IDEA.
  *
  * @author wangjie
  * @version 1.0.0
- * @create 19-2-2 下午1:47
+ * @create 19-2-12 下午12:53
  * @description
  */
 
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class AdUnitTable {
+public class Template {
 
-    private Long unitId;
-    private Integer unitStatus;
-    private Integer positionType;
-    private Long planId;
+    private String database;
+    private List<JsonTable> tableList;
 }
