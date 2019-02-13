@@ -55,7 +55,7 @@ public class CreativeUnitIndex implements IndexAware<String, CreativeUnitObject>
         Set<Long> creativeSet = unitCreativeMap.get(value.getUnitId());
         if (creativeSet == null) {
             creativeSet = new ConcurrentSkipListSet<>();
-            creativeUnitMap.put(value.getUnitId(), creativeSet);
+            unitCreativeMap.put(value.getUnitId(), creativeSet);
         }
         creativeSet.add(value.getAdId());
 

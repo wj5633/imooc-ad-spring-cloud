@@ -32,7 +32,7 @@ public class AdUnitKeyword {
     @Column(name = "id", nullable = false)
     private Long id;
 
-    @Column(name = "uint_id", nullable = false)
+    @Column(name = "unit_id", nullable = false)
     private Long unitId;
 
     @Column(name = "keyword", nullable = false)

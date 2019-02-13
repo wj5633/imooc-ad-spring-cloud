@@ -10,6 +10,5 @@ package com.wj5633.ad.search.vo.feature;
  */
 
 public enum FeatureRelation {
-
-    AND, ALL
+    AND, OR
 }

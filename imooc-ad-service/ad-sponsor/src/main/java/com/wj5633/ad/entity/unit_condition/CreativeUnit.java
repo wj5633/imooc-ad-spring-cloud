@@ -24,7 +24,7 @@ import javax.persistence.Table;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Table(name = "ab_creative_unit")
+@Table(name = "creative_unit")
 public class CreativeUnit {
 
     @Id
@@ -35,7 +35,7 @@ public class CreativeUnit {
     @Column(name = "creative_id", nullable = false)
     private Long creativeId;
 
-    @Column(name = "uint_id", nullable = false)
+    @Column(name = "unit_id", nullable = false)
     private Long unitId;
 
     public CreativeUnit(Long creativeId, Long unitId) {

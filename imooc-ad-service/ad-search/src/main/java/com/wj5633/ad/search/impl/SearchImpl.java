@@ -1,6 +1,7 @@
 package com.wj5633.ad.search.impl;
 
 import com.alibaba.fastjson.JSON;
+import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 import com.wj5633.ad.index.CommonStatus;
 import com.wj5633.ad.index.DataTable;
 import com.wj5633.ad.index.adunit.AdUnitIndex;
@@ -21,7 +22,7 @@ import com.wj5633.ad.search.vo.feature.KeywordFeature;
 import com.wj5633.ad.search.vo.media.AdSlot;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.collections4.CollectionUtils;
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
 import java.util.*;
 
@@ -35,10 +36,15 @@ import java.util.*;
  */
 
 @Slf4j
-@Component
+@Service
 public class SearchImpl implements ISearch {
 
+    public SearchResponse fetchAdsFallback(SearchRequest request, Throwable t) {
+        return null;
+    }
+
     @Override
+    @HystrixCommand(fallbackMethod = "fetchAdsFallback")
     public SearchResponse fetchAds(SearchRequest request) {
         List<AdSlot> adSlots = request.getRequestInfo().getAdSlots();
 

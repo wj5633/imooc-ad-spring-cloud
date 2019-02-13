@@ -9,9 +9,9 @@ package com.wj5633.ad.dump;
  * @description
  */
 public interface DConstant {
-    String DATA_ROOT_DIR = "~/mysql_data";
+    String DATA_ROOT_DIR = "/data/mysql_data";
 
-    String AD_PLAN = "ad_paln.data";
+    String AD_PLAN = "ad_plan.data";
     String AD_UNIT = "ad_unit.data";
     String AD_CREATIVE = "ad_creative.data";
     String AD_CREATIVE_UNIT = "ad_creative_unit.data";

@@ -1,7 +1,7 @@
 package com.wj5633.ad.service;
 
 import com.alibaba.fastjson.JSON;
-import com.wj5633.ad.DumpApplication;
+import com.wj5633.ad.Application;
 import com.wj5633.ad.constant.CommonStatus;
 import com.wj5633.ad.dao.AdPlanRepository;
 import com.wj5633.ad.dao.AdUnitRepository;
@@ -45,7 +45,7 @@ import java.util.List;
  */
 @Slf4j
 @RunWith(SpringRunner.class)
-@SpringBootTest(classes = {DumpApplication.class},
+@SpringBootTest(classes = {Application.class},
         webEnvironment = SpringBootTest.WebEnvironment.NONE)
 public class DumpDataService {
     @Autowired

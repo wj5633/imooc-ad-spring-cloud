@@ -13,9 +13,9 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  */
 
 @SpringBootApplication
-public class DumpApplication {
+public class Application {
 
     public static void main(String[] args) {
-        SpringApplication.run(DumpApplication.class, args);
+        SpringApplication.run(Application.class, args);
     }
 }
