@@ -39,16 +39,19 @@ public class AccessLogFilter extends ZuulFilter {
     public Object run() throws ZuulException {
         RequestContext ctx = RequestContext.getCurrentContext();
         HttpServletRequest request = ctx.getRequest();
-        long startTime = (long) ctx.get("startTime");
 
-        String uri = request.getRequestURI();
+        long startTime = (long) ctx.get("startTime");
         long duration = System.currentTimeMillis() - startTime;
-        String method = request.getMethod();
+
+        String message = "";
         Throwable throwable = ctx.getThrowable();
-        int statusCode = ctx.getResponseStatusCode();
+        if (throwable != null) {
+            message = throwable.getMessage();
+        }
 
         log.info(String.format("uri: %s, method: %s, code: %s error: %s, duration: %sms",
-                uri, method, statusCode, throwable.getMessage(), duration / 1000));
+                request.getRequestURI(), request.getMethod(), ctx.getResponseStatusCode(),
+                message, duration / 100));
         return null;
     }
 }

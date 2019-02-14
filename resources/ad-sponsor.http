@@ -1,0 +1,36 @@
+POST http://localhost:7000/ad-sponsor/user/create
+Content-Type: application/json
+
+{
+    "username": "test"
+}
+
+###
+
+POST http://localhost:9000/imooc/ad-sponsor/user/create
+Content-Type: application/json
+
+{
+    "username": "test"
+}
+
+###
+
+POST http://localhost:9000/imooc/ad-sponsor/user/create
+Content-Type: application/json
+
+{
+    "username": "test_x"
+}
+
+###
+
+POST http://localhost:9000/imooc/ad-sponsor/plan/list
+Content-Type: application/json
+
+{
+    "userId": 15,
+    "ids": [10]
+}
+
+###
