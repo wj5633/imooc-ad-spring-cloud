@@ -49,9 +49,8 @@ public class AccessLogFilter extends ZuulFilter {
             message = throwable.getMessage();
         }
 
-        log.info(String.format("uri: %s, method: %s, code: %s error: %s, duration: %sms",
-                request.getRequestURI(), request.getMethod(), ctx.getResponseStatusCode(),
-                message, duration / 100));
+        log.info(String.format("uri: %s, method: %s, code: %s error: %s, duration: %sms", request.getRequestURI(),
+                request.getMethod(), ctx.getResponseStatusCode(), message, duration / 100));
         return null;
     }
 }

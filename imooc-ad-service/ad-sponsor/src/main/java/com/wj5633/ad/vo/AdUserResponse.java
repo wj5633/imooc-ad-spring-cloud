@@ -1,11 +1,10 @@
 package com.wj5633.ad.vo;
 
+import java.util.Date;
+
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.apache.commons.lang.StringUtils;
-
-import java.util.Date;
 
 /**
  * Created with IntelliJ IDEA.

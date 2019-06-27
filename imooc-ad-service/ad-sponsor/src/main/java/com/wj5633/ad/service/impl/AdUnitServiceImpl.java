@@ -17,7 +17,6 @@ import com.wj5633.ad.entity.unit_condition.CreativeUnit;
 import com.wj5633.ad.exception.AdException;
 import com.wj5633.ad.service.IAdUnitService;
 import com.wj5633.ad.vo.*;
-import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -35,7 +34,6 @@ import java.util.stream.Collectors;
  * @description
  */
 
-@Slf4j
 @Service
 public class AdUnitServiceImpl implements IAdUnitService {
 

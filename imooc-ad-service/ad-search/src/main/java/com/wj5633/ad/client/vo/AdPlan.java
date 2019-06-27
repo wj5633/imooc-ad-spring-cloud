@@ -2,6 +2,8 @@ package com.wj5633.ad.client.vo;
 
 import java.util.Date;
 
+import lombok.Data;
+
 /**
  * Created with IntelliJ IDEA.
  *
@@ -10,6 +12,8 @@ import java.util.Date;
  * @create 2019/2/1 22:24
  * @description
  */
+
+@Data
 public class AdPlan {
 
     private Long id;

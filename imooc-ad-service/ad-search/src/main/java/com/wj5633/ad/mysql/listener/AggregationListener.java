@@ -3,7 +3,6 @@ package com.wj5633.ad.mysql.listener;
 import com.github.shyiko.mysql.binlog.BinaryLogClient;
 import com.github.shyiko.mysql.binlog.event.*;
 import com.wj5633.ad.mysql.TemplateHolder;
-import com.wj5633.ad.mysql.constant.Constant;
 import com.wj5633.ad.mysql.dto.BinlogRowData;
 import com.wj5633.ad.mysql.dto.TableTemplate;
 import lombok.extern.slf4j.Slf4j;

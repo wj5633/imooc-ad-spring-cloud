@@ -16,6 +16,7 @@ import lombok.EqualsAndHashCode;
 @EqualsAndHashCode(callSuper = false)
 public class AdException extends Exception {
 
+    private static final long serialVersionUID = 1L;
     private Integer code;
 
     public AdException( String message) {

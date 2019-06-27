@@ -18,6 +18,7 @@ import java.io.Serializable;
 @NoArgsConstructor
 @AllArgsConstructor
 public class CommonResponse<T> implements Serializable {
+    private static final long serialVersionUID = 1L;
     public static final int SUCCESS_CODE = 0;
     public static final int ERROR_CODE = 1;
     public static final String EMPTY_ERROR = "";

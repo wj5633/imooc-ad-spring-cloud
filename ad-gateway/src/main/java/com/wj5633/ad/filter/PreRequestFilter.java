@@ -3,10 +3,9 @@ package com.wj5633.ad.filter;
 import com.netflix.zuul.ZuulFilter;
 import com.netflix.zuul.context.RequestContext;
 import com.netflix.zuul.exception.ZuulException;
-import lombok.extern.slf4j.Slf4j;
+
 import org.springframework.cloud.netflix.zuul.filters.support.FilterConstants;
 import org.springframework.stereotype.Component;
-
 /**
  * Created with IntelliJ IDEA.
  *
@@ -15,7 +14,6 @@ import org.springframework.stereotype.Component;
  * @create 2019/1/29 21:39
  * @description
  */
-@Slf4j
 @Component
 public class PreRequestFilter extends ZuulFilter {
     @Override

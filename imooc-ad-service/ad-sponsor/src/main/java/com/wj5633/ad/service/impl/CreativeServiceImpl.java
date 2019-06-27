@@ -6,7 +6,6 @@ import com.wj5633.ad.exception.AdException;
 import com.wj5633.ad.service.ICreativeService;
 import com.wj5633.ad.vo.CreativeRequest;
 import com.wj5633.ad.vo.CreativeResponse;
-import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -20,7 +19,6 @@ import org.springframework.transaction.annotation.Transactional;
  * @description
  */
 
-@Slf4j
 @Service
 public class CreativeServiceImpl implements ICreativeService {
 

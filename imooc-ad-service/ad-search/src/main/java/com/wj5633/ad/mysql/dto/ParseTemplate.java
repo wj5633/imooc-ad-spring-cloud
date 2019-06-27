@@ -40,11 +40,11 @@ public class ParseTemplate {
             Map<OpType, List<String>> opTypeFieldSetMap = tableTemplate.getOpTypeFieldSetMap();
 
             for (JsonTable.Column column : table.getInsert()) {
-                /*getAndCreateIfNeed(
+                getAndCreateIfNeed(
                         OpType.ADD,
                         opTypeFieldSetMap,
                         ArrayList::new)
-                        .add(column.getColumn());*/
+                        .add(column.getColumn());
 
                 opTypeFieldSetMap.computeIfAbsent(OpType.ADD, k -> new ArrayList<>())
                         .add(column.getColumn());

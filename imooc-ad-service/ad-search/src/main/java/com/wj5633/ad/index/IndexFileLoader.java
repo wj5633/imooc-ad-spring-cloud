@@ -5,7 +5,6 @@ import com.wj5633.ad.dump.DConstant;
 import com.wj5633.ad.dump.table.*;
 import com.wj5633.ad.handler.AdLevelDatahandler;
 import com.wj5633.ad.mysql.constant.OpType;
-import lombok.extern.slf4j.Slf4j;
 import org.springframework.context.annotation.DependsOn;
 import org.springframework.stereotype.Component;
 
