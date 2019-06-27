@@ -3,8 +3,6 @@ package com.wj5633.ad.service;
 import com.wj5633.ad.exception.AdException;
 import com.wj5633.ad.vo.CreativeRequest;
 import com.wj5633.ad.vo.CreativeResponse;
-import com.wj5633.ad.vo.CreativeUnitRequest;
-import com.wj5633.ad.vo.CreativeUnitResponse;
 
 /**
  * Created with IntelliJ IDEA.

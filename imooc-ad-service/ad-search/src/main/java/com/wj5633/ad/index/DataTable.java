@@ -1,14 +1,13 @@
 package com.wj5633.ad.index;
 
-import org.apache.kafka.common.protocol.types.Field;
+import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
+
 import org.springframework.beans.BeansException;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationContextAware;
 import org.springframework.core.PriorityOrdered;
 import org.springframework.stereotype.Component;
-
-import java.util.Map;
-import java.util.concurrent.ConcurrentHashMap;
 
 /**
  * Created with IntelliJ IDEA.
@@ -24,7 +23,7 @@ public class DataTable implements ApplicationContextAware, PriorityOrdered {
 
     private static ApplicationContext applicationContext;
 
-    private static final Map<Class, Object> dataTableMap = new ConcurrentHashMap<>();
+    private static final Map<Class<?>, Object> dataTableMap = new ConcurrentHashMap<>();
 
     @Override
     public void setApplicationContext(ApplicationContext applicationContext) throws BeansException {
