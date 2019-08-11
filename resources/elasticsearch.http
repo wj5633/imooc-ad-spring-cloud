@@ -1,0 +1,23 @@
+PUT http://localhost:9200/_ingest/pipeline/imooc-ad-log
+
+{
+  "description" : "imooc-ad-log",
+  "processors": [
+    {
+      "grok": {
+        "field": "message",
+        "patterns": ["\\[%{TIMESTAMP_ISO8601:log_time}\\] %{NOTSPACE:thread} %{NOTSPACE:log_level} %{NOTSPACE:java_class} %{NOTSPACE:code_line} - %{GREEDYDATA:content}"]
+      }
+    },
+    {
+        "date": {
+            "field": "log_time",
+            "formats": ["yyyy-MM-dd HH:mm:ss:SSS"],
+            "timezone": "Asia/Shanghai",
+            "target_field": "@timestamp"
+        }
+    }
+  ]
+}
+# grok 处理器，用于解析日志字符串提取其中关键字段;
+# 日期处理器，功能为把 log_time 字段以 yyyy-MM-dd HH:mm:ss:SSS 格式解析成日期，然后将结果保存到 @timestamp 字段中

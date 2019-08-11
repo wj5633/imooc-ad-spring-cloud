@@ -3,6 +3,10 @@ server:
   servlet:
     context-path: /ad-search
 
+logging:
+  config: classpath:logback.xml
+  file: ad-search.log
+
 spring:
   application:
     name: eureka-client-ad-search

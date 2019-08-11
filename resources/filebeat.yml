@@ -1,0 +1,31 @@
+filebeat.inputs:
+
+  - type: log
+
+    # Change to true to enable this input configuration.
+    # true 代表启动当前的配置
+    enabled: true
+
+    # Paths that should be crawled and fetched. Glob based paths.
+    # Filebeat 监听的日志文件, paths 是数组, 可以配置多个目录下的文件
+    paths:
+      - /imooc/imooc-ad-spring-cloud/logs/ad-sponsor.log
+
+    # 多行日志的配置, 也就是将多行日志合并为一条日志的规则配置
+    # 这个需要与 logback.xml 中定义的日志规则匹配
+    multiline.pattern: ^\[
+    # negate 和 match 的配置将 [ 后面的多行与最近的一个以 [ 开头的日志进行合并成为一行
+    multiline.negate: true
+    multiline.match: after
+
+    # 不从头读取日志文件, 而是从尾部读取, 等价于 tailf (tail -f)
+    tail_files: true
+
+#-------------------------- Elasticsearch output ------------------------------
+output.elasticsearch:
+  # Array of hosts to connect to.
+  # ES 主机的地址, 即使是集群也可以配置一个, 但是建议全部配置: 负载均衡, 故障兼容
+  hosts: ["localhost:9200"]
+  # ES 数据索引的定义, 也就是说将数据发送到哪个索引中去(需要对 ES 有了解)
+  index: "imooc-ad-sponsor-%{+yyyy.MM.dd}"
+  pipeline: "imooc-ad-log"
