@@ -21,6 +21,21 @@ filebeat.inputs:
     # 不从头读取日志文件, 而是从尾部读取, 等价于 tailf (tail -f)
     tail_files: true
 
+#==================== Elasticsearch template setting ==========================
+# setup.template 区域指定索引的模板(这些都是 ES 中的概念)，用来设置在 ES 中的映射
+# 模板的名称
+setup.template.name: imooc-ad-sponsor
+# 模板的模式
+setup.template.pattern: imooc-ad-sponsor-*
+# Kibana 索引的配置
+setup.dashboards.index: imooc-ad-sponsor-*
+# 描述字段的 YAML 文件路径(发送到 ES 的字段定义), 使用 Filebeat 自带的
+setup.template.fields: fields.yml
+
+setup.template.settings:
+  # 索引分区个数的定义, 与 ES 的优化相关的
+  index.number_of_shards: 3
+
 #-------------------------- Elasticsearch output ------------------------------
 output.elasticsearch:
   # Array of hosts to connect to.
@@ -28,4 +43,3 @@ output.elasticsearch:
   hosts: ["localhost:9200"]
   # ES 数据索引的定义, 也就是说将数据发送到哪个索引中去(需要对 ES 有了解)
   index: "imooc-ad-sponsor-%{+yyyy.MM.dd}"
-  pipeline: "imooc-ad-log"
