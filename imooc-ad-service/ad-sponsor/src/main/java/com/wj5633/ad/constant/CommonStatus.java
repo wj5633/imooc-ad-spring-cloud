@@ -22,4 +22,5 @@ public enum CommonStatus {
     CommonStatus(Integer status, String desc) {
         this.status = status;
         this.desc = desc;
-    }}
+    }
+}

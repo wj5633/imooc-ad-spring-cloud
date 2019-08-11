@@ -1,6 +1,7 @@
 package com.wj5633.ad.handler;
 
 import com.alibaba.fastjson.JSON;
+import com.wj5633.ad.constant.OpType;
 import com.wj5633.ad.dump.table.*;
 import com.wj5633.ad.index.DataTable;
 import com.wj5633.ad.index.IndexAware;
@@ -15,7 +16,6 @@ import com.wj5633.ad.index.creativeunit.CreativeUnitObject;
 import com.wj5633.ad.index.district.UnitDistrictIndex;
 import com.wj5633.ad.index.interest.UnitItIndex;
 import com.wj5633.ad.index.keyword.UnitKeywordIndex;
-import com.wj5633.ad.mysql.constant.OpType;
 import com.wj5633.ad.utils.CommonUtils;
 import lombok.extern.slf4j.Slf4j;
 

@@ -1,11 +1,11 @@
 package com.wj5633.ad.sender.index;
 
 import com.alibaba.fastjson.JSON;
+import com.wj5633.ad.constant.Constant;
+import com.wj5633.ad.dto.MySqlRowData;
 import com.wj5633.ad.dump.table.*;
 import com.wj5633.ad.handler.AdLevelDatahandler;
 import com.wj5633.ad.index.DataLevel;
-import com.wj5633.ad.mysql.constant.Constant;
-import com.wj5633.ad.mysql.dto.MySqlRowData;
 import com.wj5633.ad.sender.ISender;
 import com.wj5633.ad.utils.CommonUtils;
 import lombok.extern.slf4j.Slf4j;
@@ -25,7 +25,7 @@ import java.util.Map;
  */
 
 @Slf4j
-@Component("indexSender")
+@Component
 public class IndexSender implements ISender {
 
 

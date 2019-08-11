@@ -42,7 +42,7 @@ public class AdPlanIndex implements IndexAware<Long, AdPlanObject> {
     public void update(Long key, AdPlanObject value) {
         log.info("AdPlanIndex, before update: {}", objectMap);
         AdPlanObject oldObject = objectMap.get(key);
-        if (oldObject==null) {
+        if (oldObject == null) {
             objectMap.put(key, value);
         } else {
             oldObject.update(value);
